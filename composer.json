@@ -1,3 +1,30 @@
 {
-    
+    "name": "aammui/l9-repository",
+    "description": "Repository patterns for Laravel",
+    "keywords": [
+        "aammui"
+    ],
+    "authors": [
+        {
+            "name": "Bedram Tamang",
+            "email": "tmgbedu@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aammui\\L9Repository\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aammui\\L9Repository\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aammui\\L9Repository\\L9RepositoryServiceProvider"
+            ]
+        }
+    }
 }
