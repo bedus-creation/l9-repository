@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repository\Eloquent;
+namespace Aammui\L9Repository;
 
-use App\Repository\EloquentRepositoryInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Repository implements RepositoryInterface
 {
     /**
-     * @var Model
+     * @var Builder
      */
-    protected $model;
+    protected Builder $model;
 
     /**
      * BaseRepository constructor.
@@ -19,6 +19,15 @@ class Repository implements RepositoryInterface
      */
     public function __construct(Model $model)
     {
-        $this->model = $model;
+        $this->model = $model->newQuery();
     }
+
+    public function get()
+    {
+        $results = $this->model->get();
+
+        $this->resetModel();
+    }
+
+    protected function resetModel() {}
 }
